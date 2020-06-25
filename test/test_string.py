@@ -25,6 +25,7 @@ def test_concat_with_old_style_formatting():
     b = "dff"
     assert string_basics.concat_with_old_style_formatting(a, b) == "abcdff"
 
+
 def test_concat_f_strings():
     a = "abc"
     b = "dff"
@@ -37,25 +38,52 @@ def test_concat_multiple_strings():
     c = "ddd"
     assert string_basics.concat_with_join(a, b, c) == "abcdffddd"
 
-'''
+
+"""
 separator=separator   ????????
-'''
+"""
+
 
 def test_concat_with_join_and_separator():
     a = "abc"
     b = "dff"
     separator = ","
-    assert string_basics.concat_with_join(a, b, separator=separator) == "abc,dff"
+    assert (
+        string_basics.concat_with_join(a, b, separator=separator) == "abc,dff"
+    )
 
 
 def test_format_with_template_string():
     a = "abc"
     b = "dff"
     template = "{}---{}"
-    assert string_basics.format_with_template_string(template, a, b) == "abc---dff"
+    assert (
+        string_basics.format_with_template_string(template, a, b)
+        == "abc---dff"
+    )
+
 
 def test_format_with_separator_string():
     a = "abc"
     b = "dff"
     separator = "{},{}"
-    assert string_basics.format_with_separator_string(a, b, separator) == "abc,dff"
+    assert (
+        string_basics.format_with_separator_string(a, b, separator)
+        == "abc,dff"
+    )
+
+
+def test_format_with_spacing():
+    a = "abc"
+    b = "dff"
+    assert string_basics.format_with_spacing(a, b) == "       abc       dff"
+
+
+def test_format_with_spacing_with_8spaces():
+    a = "abc"
+    b = "dff"
+    assert (
+        string_basics.format_with_spacing(a, b, spacing=8)
+        == "     abc     dff"
+    )
+
