@@ -1,23 +1,9 @@
-a = "abc"
-b = "dff"
-
-
 def concat_with_string_addition(a, b):
     return a + b
 
 
 def concat_with_format(a, b):
     return "{}{}".format(a, b)
-
-
-"""
-def concat_with_join(*args):
-   return "".join(args)
-
-
-def concat_with_join_and_separator(*args, separator=","):
-    return separator.join(args)   
-"""
 
 
 def concat_with_join(*args, separator=""):
