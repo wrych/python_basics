@@ -41,8 +41,19 @@ def format_with_separator_string(a, b, separator):
 
 
 def format_with_spacing(a, b, spacing=10):
-    # hint: use f-strings (see above)
-    # f-string can be provided with formatting options in the curly brackets {}.
-    # for exampel f"{var:a>10}" returns aaaaaaaaaa (if var is "") 
-    # for exampel f"{var:d>10}" returns dddddddbbb (if var is "bbb") 
-    # for exampel f"{var:f>10}" returns ffffffbbbb (if var is "bbb") 
+    return f"{a: >{spacing}}{b: >{spacing}}"
+
+
+def split(a, separator=None):
+    return a.split(separator)
+
+
+def strip(a):
+    return a.strip()
+
+
+def combine_split_join(a, split_separator=" ", join_separator=","):
+    return concat_with_join(
+        *split(a, separator=split_separator), separator=join_separator
+    )
+
