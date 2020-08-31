@@ -19,7 +19,7 @@ def printing_random_answer():
     print(random.choice(answers_list))
 
 
-if __name__ == "__main__":
+def main():
     count = 0
     magic_number = int(input("Please, Choose and write the magic number: \n"))
 
@@ -37,4 +37,8 @@ if __name__ == "__main__":
         elif int(users_number) != count:
             printing_random_answer()
             break
+
+
+if __name__ == "__main__":
+    main()
 
